@@ -1,11 +1,11 @@
 {
-  "name": "tern",
+  "name": "Tern",
   "main": "./lib/tern",
   "version": "0.0.0",
   "private": true,
-  "description": "A short description of your package",
+  "description": "Smart javascript code intelligence for Atom.io",
   "activationEvents": ["tern:completion", "tern:start-server"],
-  "repository": "https://github.com/atom/tern",
+  "repository": "https://github.com/artoale/atom-tern",
   "license": "MIT",
   "engines": {
     "atom": ">0.50.0"
