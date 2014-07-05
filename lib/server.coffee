@@ -9,14 +9,14 @@ module.exports = ->
         stderr = (output) -> console.error output
         stdout = (output) ->
             output = output.split(" ")
-            console.log 'output:', output
             port = output[output.length - 1]
-            console.log "Running on port #{port}"
+            console.log "Tern server running on port #{port}"
             cb port
         options =
-            cwd: atom.project.getPath()
+            cwd: atom.project.getRootDirectory().getPath()
+        console.log(options);
         exit = (code) -> console.log("tern exited with code: #{code}")
-        process = new BufferedNodeProcess {command, args, stdout, stderr, exit}
+        process = new BufferedNodeProcess {command, args, options, stdout, stderr, exit}
 
     stop = ->
         process?.kill()

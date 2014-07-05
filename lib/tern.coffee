@@ -5,10 +5,8 @@ clientFactory = (require './client')
 client = null;
 tern = module.exports =
     autocompleteViews: []
-    update: (editor) ->
-        _.throttle ->
-            client.update editor.getUri(), editor.getText()
-        , 1000
+    update: editor ->
+        client.update editor.getUri(), editor.getText()
 
     checkCompletion: (editor, force = false) ->
         cursor = editor.getCursor()
@@ -33,7 +31,7 @@ tern = module.exports =
             if editor.getGrammar().name isnt 'JavaScript'
                 return
             buffer = editor.getBuffer()
-            buffer.on 'contents-modified', @update.bind(this, editor)
+            buffer.on 'contents-modified', _.throttle @update.bind(this, editor), 2000
             buffer.on 'contents-modified', @checkCompletion.bind(this, editor, false)
 
 
