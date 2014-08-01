@@ -5,7 +5,7 @@ clientFactory = (require './client')
 client = null;
 tern = module.exports =
     autocompleteViews: []
-    update: editor ->
+    update: (editor) ->
         client.update editor.getUri(), editor.getText()
 
     checkCompletion: (editor, force = false) ->
