@@ -7,8 +7,8 @@
 
 # For more detailed documentation see
 # https://atom.io/docs/latest/advanced/keymaps
-'.tern .mini.editor input':
+'.tern atom-text-editor[mini]atom-text-editor input':
     'enter': 'core:confirm'
     'tab': 'core:confirm'
-'.editor':
+'atom-text-editor':
     'cmd-space': 'tern:completion'

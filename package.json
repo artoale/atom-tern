@@ -4,10 +4,9 @@
   "version": "0.8.0",
   "private": true,
   "description": "Smart javascript code intelligence for Atom.io",
-  "activationEvents": [
-    "tern:completion",
-    "tern:start-server"
-  ],
+  "activationCommands": {
+    "atom-text-editor": ["tern:completion", "tern:start-server"]
+  },
   "repository": "https://github.com/artoale/atom-tern",
   "license": "MIT",
   "engines": {

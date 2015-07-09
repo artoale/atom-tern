@@ -1,7 +1,9 @@
 # See https://atom.io/docs/latest/creating-a-package#menus for more details
 'context-menu':
-  '.overlayer':
-      'Enable tern': 'tern:toggle'
+  'atom-workspace': [{
+      label: 'Enable tern',
+      command:  'tern:toggle'
+  }]
 
 'menu': [
   {
